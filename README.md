@@ -29,3 +29,7 @@ and the database environment variables are included as a starting point for the 
 
 This is a demonstration project, not a real pharmacy or medical service. Product data is illustrative.
 Do not use it for real medicine sales, prescriptions, payments, or patient data.
+
+## Latest Feature Update
+
+MediCart project feature branch practice.
