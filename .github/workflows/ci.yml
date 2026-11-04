@@ -18,10 +18,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
       - name: Install
-        run: npm ci
+        run: |
+           nmp ci --prefix server
+           nmp ci --prefix client
 
       - name: Build
         run: npm run build
@@ -36,6 +37,6 @@ jobs:
         run: |
           docker run -d --name medicart -p 3000:3000 medicart:ci
           sleep 3
-          curl -sf http://localhost:3000/health
-          curl -sf "http://localhost:3000/total?price=500&qty=2"
+          curl -sf http://localhost:3000/api/health
+          curl -sf "http://localhost:3000/api/products"
           docker rm -f medicart
